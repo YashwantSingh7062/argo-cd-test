@@ -16,6 +16,7 @@ spec:
     spec:
       containers:
       - name: user-service
-        image: scale-server:latest
+        image: scale-server:v1.0.0
+        imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8000
