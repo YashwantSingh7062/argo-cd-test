@@ -4,7 +4,9 @@ pipeline {
     stages {
         stage("test") {
             steps {
-                sh "go test ./..."
+                container('golang') {
+                    sh "go test ./..."
+                }
             }
         }
 
