@@ -1,4 +1,4 @@
-module scale_server
+module github.com/YashwantSingh7062/argo-cd-test
 
 go 1.24.2
 

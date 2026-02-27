@@ -3,19 +3,19 @@ package main
 import (
 	"context"
 	"fmt"
-	"net/http"
 	"os"
 	"os/signal"
 	"time"
+
+	"github.com/YashwantSingh7062/argo-cd-test/lib/controller"
 
 	"github.com/labstack/echo"
 )
 
 func main() {
 	e := echo.New()
-	e.GET("/", func(ctx echo.Context) error {
-		return ctx.String(http.StatusOK, "Hello World")
-	})
+	serviceController := controller.Controller{}
+	e.GET("/", serviceController.GetUser)
 
 	go func() {
 		e.Logger.Fatal(e.Start(":8000"))
